@@ -297,7 +297,6 @@ public class BedWarsScoreboard {
                 // Game scoreboard
                 current = current
                         .replace("{map}", arena.getDisplayName())
-                        .replace("{map_name}", arena.getArenaName())
                         .replace("{group}", arena.getDisplayGroup(player));
 
                 for (ITeam currentTeam : arena.getTeams()) {
@@ -633,7 +632,6 @@ public class BedWarsScoreboard {
      * @param arena  target arena.
      */
     public static void giveScoreboard(@NotNull Player player, IArena arena, boolean delay) {
-
         if (!player.isOnline()) return;
         BedWarsScoreboard scoreboard = BedWarsScoreboard.getSBoard(player.getUniqueId());
         List<String> lines = null;
@@ -645,6 +643,7 @@ public class BedWarsScoreboard {
                 if (scoreboard != null) {
                     scoreboard.remove();
                 }
+                return;
             }
             lines = Language.getList(player, Messages.SCOREBOARD_LOBBY);
         } else {
