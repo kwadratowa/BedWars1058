@@ -58,10 +58,10 @@
             <id>alessioDP-releases</id>
             <url>https://repo.alessiodp.com/releases/</url>
         </repository>
-        <repository>
+        <!-- <repository>
             <id>andrei1058-releases</id>
             <url>https://repo.andrei1058.com/releases/</url>
-        </repository>
+        </repository> -->
     </repositories>
 
     <dependencies>
@@ -175,11 +175,11 @@
             <artifactId>versionsupport_v1_17_R1</artifactId>
             <version>${project.version}</version>
         </dependency>
-        <dependency>
-            <groupId>com.andrei1058.bedwars</groupId>
-            <artifactId>versionsupport_v1_18_R1</artifactId>
-            <version>${project.version}</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.andrei1058.bedwars</groupId>-->
+<!--            <artifactId>versionsupport_v1_18_R1</artifactId>-->
+<!--            <version>${project.version}</version>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>com.andrei1058.bedwars</groupId>
             <artifactId>versionsupport-common</artifactId>
@@ -298,6 +298,26 @@
                 <artifactId>maven-deploy-plugin</artifactId>
                 <configuration>
                     <skip>true</skip>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.sonatype.plugins</groupId>
+                <artifactId>nexus-staging-maven-plugin</artifactId>
+                <version>1.5.1</version>
+                <executions>
+                    <execution>
+                        <id>default-deploy</id>
+                        <phase>deploy</phase>
+                        <goals>
+                            <goal>deploy</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <serverId>kwadratowa-games-repository</serverId>
+                    <nexusUrl>https://nexus.kwadratowa.games</nexusUrl>
+                    <skipStaging>true</skipStaging>
                 </configuration>
             </plugin>
         </plugins>

@@ -114,17 +114,14 @@
         <module>versionsupport_1_16_R2</module>
         <module>versionsupport_v1_16_R3</module>
         <module>versionsupport_v1_17_R1</module>
-        <module>versionsupport_v1_18_R1</module>
+        <!-- <module>versionsupport_v1_18_R1</module> -->
     </modules>
 
     <distributionManagement>
         <repository>
-            <id>ftp-repo</id>
-            <url>ftp://andrei1058.com/releases</url>
+            <id>kwadratowa-games-repository</id>
+            <url>https://nexus.kwadratowa.games/repository/kwadratowa-games/</url>
         </repository>
-        <snapshotRepository>
-            <id>ftp-repo</id>
-            <url>ftp://andrei1058.com/snapshots</url>
-        </snapshotRepository>
     </distributionManagement>
+
 </project>
