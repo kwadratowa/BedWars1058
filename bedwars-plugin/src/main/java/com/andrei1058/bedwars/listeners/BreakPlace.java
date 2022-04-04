@@ -278,6 +278,7 @@ public class BreakPlace implements Listener {
                                             }
                                         } else {
                                             e.setCancelled(false);
+                                            e.setDropItems(false);
                                             t.setBedDestroyed(true);
                                             a.addPlayerBedDestroyed(p);
                                             PlayerBedBreakEvent breakEvent;
