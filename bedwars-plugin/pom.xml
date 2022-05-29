@@ -5,21 +5,12 @@
     <parent>
         <artifactId>BedWars1058</artifactId>
         <groupId>com.andrei1058.bedwars</groupId>
-        <version>22.3-SNAPSHOT</version>
+        <version>${jgitver.calcuated_version}</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>bedwars-plugin</artifactId>
     <packaging>jar</packaging>
     <version>${parent.version}</version>
-
-    <pluginRepositories>
-        <pluginRepository>
-            <!-- This is a temporary reference as the Maven Shade plugin
-                that supports Java 17 is not released yet -->
-            <id>maven-snapshots</id>
-            <url>https://repository.apache.org/content/repositories/snapshots/</url>
-        </pluginRepository>
-    </pluginRepositories>
 
     <repositories>
         <repository>
@@ -282,7 +273,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
-                <version>3.3.1-SNAPSHOT</version>
+                <version>3.3.0</version>
                 <configuration>
                     <relocations>
                         <relocation>
